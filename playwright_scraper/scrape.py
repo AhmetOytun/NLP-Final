@@ -1,7 +1,7 @@
 import json
 from playwright.sync_api import sync_playwright
 
-def scrape_letterboxd_reviews(review_pages, output_file="reviews.json"):
+def scrape_imdb_reviews(review_pages, output_file="reviews.json"):
     """
     Scrape reviews from the IMDB page of a movie and write each review to a JSON file.
     """
@@ -58,8 +58,8 @@ negative_review_pages = [
     "https://www.imdb.com/title/tt6751668/reviews/?ref_=tt_ururv_sm&rating=2&spoilers=EXCLUDE",
 ]
 
-positive_reviews = scrape_letterboxd_reviews(positive_review_pages)
-negative_reviews = scrape_letterboxd_reviews(negative_review_pages)
+positive_reviews = scrape_imdb_reviews(positive_review_pages)
+negative_reviews = scrape_imdb_reviews(negative_review_pages)
 
 # write positive reviews to file
 with open("positive_reviews.json", "w") as f:
